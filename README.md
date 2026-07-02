@@ -160,6 +160,3 @@ Created as a demonstration of temperature conversion using HTML, CSS, and JavaSc
 For issues or questions, please check the code comments or review the conversion formulas in the Technical Details section.
 
 ---
-
-**Last Updated**: July 2, 2026  
-**Version**: 1.0.0
