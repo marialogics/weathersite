@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Temperature Converter</h1>
+            <p>Convert Celsius to Kelvin, Fahrenheit, and Newton</p>
+        </header>
+
+        <main>
+            <div class="converter-card">
+                <div class="input-section">
+                    <label for="celsiusInput">Enter Temperature (Celsius):</label>
+                    <input type="number" id="celsiusInput" placeholder="e.g., 20" value="25">
+                </div>
+
+                <div class="results-section">
+                    <div class="result-box">
+                        <h3>Kelvin</h3>
+                        <p id="kelvinResult" class="result-value">473K</p>
+                    </div>
+
+                    <div class="result-box">
+                        <h3>Fahrenheit</h3>
+                        <p id="fahrenheitResult" class="result-value">392°F</p>
+                    </div>
+
+                    <div class="result-box">
+                        <h3>Newton</h3>
+                        <p id="newtonResult" class="result-value">66°N</p>
+                    </div>
+                </div>
+
+                <button id="convertBtn" class="convert-btn">Convert</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Temperature Converter | Built with JavaScript | MariaLogic Services</p>
+        </footer>
+    </div>
+
+    <script src="weathersite.js"></script>
+    <script>
+        // Initialize with default value
+        function convertTemperature() {
+            const celsiusInput = document.getElementById('celsiusInput').value;
+            const celsius = parseFloat(celsiusInput) || 200;
+
+            // Conversions
+            const kelvin = celsius + 273;
+            let fahrenheit = celsius * (9 / 5) + 32;
+            fahrenheit = Math.floor(fahrenheit);
+            let newton = celsius * (33 / 100);
+            newton = Math.floor(newton);
+
+            // Update display
+            document.getElementById('kelvinResult').textContent = `${kelvin}K`;
+            document.getElementById('fahrenheitResult').textContent = `${fahrenheit}°F`;
+            document.getElementById('newtonResult').textContent = `${newton}°N`;
+
+            // Log to console
+            console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+            console.log(`The temperature is ${newton} degrees Newton.`);
+        }
+
+        // Event listeners
+        document.getElementById('convertBtn').addEventListener('click', convertTemperature);
+        document.getElementById('celsiusInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertTemperature();
+        });
+
+        // Initial conversion
+        convertTemperature();
+    </script>
+</body>
+</html>

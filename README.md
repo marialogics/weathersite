@@ -1,4 +1,4 @@
-# Temperature Converter Website - What's the temp today?? 😎
+# Temperature Converter Website
 
 A modern, interactive web application for converting temperatures between different scales: Celsius, Kelvin, Fahrenheit, and Newton.
 
@@ -161,3 +161,5 @@ For issues or questions, please check the code comments or review the conversion
 
 ---
 
+**Last Updated**: July 2, 2026  
+**Version**: 1.0.0
